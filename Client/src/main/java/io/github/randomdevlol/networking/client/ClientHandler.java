@@ -13,7 +13,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
         ByteBuf in = (ByteBuf) msg;
 
         try {
-            long currentMillis = (in.readUnsignedInt() - 2208988800L) * 1000;
+            long currentMillis = in.readUnsignedInt() * 1000;
             System.out.println(new Date(currentMillis));
             ctx.close();
         } finally {

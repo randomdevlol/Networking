@@ -25,7 +25,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
         System.out.println("Client connected");
 
         ByteBuf time = ctx.alloc().buffer(4);
-        time.writeInt((int) (System.currentTimeMillis() / 1000 + 2208988800L));
+        time.writeInt((int) (System.currentTimeMillis() / 1000));
 
         ChannelFuture future = ctx.writeAndFlush(time);
         future.addListener((ChannelFutureListener) channelFuture -> {
