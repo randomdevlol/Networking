@@ -37,12 +37,6 @@ public class Server {
         };
 
         OptionSet optionSet = parser.parse(args);
-
-        if (!optionSet.has("host") || !optionSet.has("port")) {
-            logger.warning("Host or port not defined");
-            return;
-        }
-
         new Server(optionSet);
     }
 
